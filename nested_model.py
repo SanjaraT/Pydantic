@@ -17,5 +17,11 @@ add1 = Address(**add_dict)
 pat_dict ={'name':'Sanjara', 'age': 25, 'gender':'Female','address':add1}
 pat1 = Patient(**pat_dict)
 
-print(pat1)
-print(pat1.address.code)
+# print(pat1)
+# print(pat1.address.code)
+
+temp1 = pat1.model_dump(include=['name','gender','age'])
+temp2 = pat1.model_dump(exclude=['age'])
+
+print(temp1)
+print(temp2)
